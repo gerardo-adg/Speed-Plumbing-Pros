@@ -7,7 +7,8 @@
     "text": "I had an excellent experience with this company. Jairo came out yesterday to repair my water heater and was professional, friendly, knowledgeable, and courteous. He completed the repair the same day instead of making me wait for another appointment, which I truly appreciated.",
     "truncated": true,
     "rating": 5,
-    "source": "Google"
+    "source": "Google",
+    "order": 0
   },
   {
     "id": "heidi-r",
@@ -17,7 +18,8 @@
     "text": "I had an outstanding experience with Jairo at Speed Plumbing Pros and highly recommend him to anyone looking for an honest, reliable plumber in the Sacramento area. I needed plumbing work done at my 8-unit apartment building, and from the very first visit, Jairo impressed me with his professionalism, knowledge",
     "truncated": true,
     "rating": 5,
-    "source": "Google"
+    "source": "Google",
+    "order": 1
   },
   {
     "id": "becky-j",
@@ -27,7 +29,8 @@
     "text": "Speed plumbing pro save the day. I have a small Salon and my sinks were backed up and he fit me in so I could be back up and run very quickly. Great service.",
     "truncated": false,
     "rating": 5,
-    "source": "Google"
+    "source": "Google",
+    "order": 2
   },
   {
     "id": "peggy-f",
@@ -36,6 +39,7 @@
     "text": "Excellent customer service. Good communicator. Kind. Responsible. Trustworthy.",
     "truncated": false,
     "rating": 5,
-    "source": "Google"
+    "source": "Google",
+    "order": 3
   }
 ]

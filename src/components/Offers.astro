@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
-const offers = await getCollection('offers');
+const offers = (await getCollection('offers')).sort((a, b) => a.data.order - b.data.order);
 ---
 <section class="section" id="offers" aria-labelledby="off-title">
   <div class="wrap">
     <div class="section-head split">
-      <div style="display:grid;gap:14px"><span class="eyebrow">Save on your next job</span><h2 id="off-title">Current offers</h2></div>
+      <div style="display:grid;gap:14px"><h2 id="off-title">Current offers</h2></div>
       <p class="lede">Mention the offer when you call or book online.</p>
     </div>
     <div class="offer-grid">

@@ -5,13 +5,12 @@ import Stars from './Stars.astro';
 import { site } from '../data/site';
 interface Props { heading?: string; limit?: number }
 const { heading = 'What Sacramento homeowners say', limit = 4 } = Astro.props;
-const reviews = (await getCollection('reviews')).slice(0, limit);
+const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b.data.order).slice(0, limit);
 ---
 <section class="section reviews-band" id="reviews" aria-labelledby="rev-title">
   <div class="wrap">
     <div class="section-head split">
       <div style="display:grid;gap:14px">
-        <span class="eyebrow">Reviews</span>
         <h2 id="rev-title">{heading}</h2>
       </div>
       <div class="rating">

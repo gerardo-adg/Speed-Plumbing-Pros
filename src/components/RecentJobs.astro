@@ -12,7 +12,7 @@ const jobs = (await getCollection('jobs'))
 <section class="section jobs-band" id="jobs" aria-labelledby="jobs-title">
   <div class="wrap">
     <div class="section-head split">
-      <div style="display:grid;gap:14px"><span class="eyebrow">Recent jobs</span><h2 id="jobs-title">{heading}</h2></div>
+      <div style="display:grid;gap:14px"><h2 id="jobs-title">{heading}</h2></div>
       <p class="lede">Photos and notes posted straight from the job site.</p>
     </div>
     {jobs.length ? (

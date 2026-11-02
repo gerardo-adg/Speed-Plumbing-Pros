@@ -15,7 +15,7 @@ import { business, faqPage } from '../lib/schema';
 import { site } from '../data/site';
 
 const areas = (await getCollection('areas')).sort((a, b) => a.data.order - b.data.order);
-const faqs = await getCollection('faqs');
+const faqs = (await getCollection('faqs')).sort((a, b) => a.data.order - b.data.order);
 ---
 <Base
   title={`Sacramento Plumber | Fast, Same-Day Plumbing | ${site.name}`}
@@ -27,7 +27,7 @@ const faqs = await getCollection('faqs');
   <section class="section" id="services" aria-labelledby="svc-title">
     <div class="wrap">
       <div class="section-head split">
-        <div style="display:grid;gap:14px"><span class="eyebrow">What we fix</span><h2 id="svc-title">Plumbing services in Sacramento</h2></div>
+        <div style="display:grid;gap:14px"><h2 id="svc-title">Plumbing services in Sacramento</h2></div>
         <p class="lede">From a slow kitchen drain to a full repipe, one licensed team handles it. Pick a service to see what's involved.</p>
       </div>
       <ServicesGrid />
@@ -43,7 +43,6 @@ const faqs = await getCollection('faqs');
   <section class="section" id="areas" aria-labelledby="areas-title">
     <div class="wrap areas">
       <div style="display:grid;gap:16px">
-        <span class="eyebrow">Service area</span>
         <h2 id="areas-title">Plumbers across Greater Sacramento</h2>
         <p class="lede">Based in Sacramento and serving homes and businesses from Davis to Placerville and Lincoln to Elk Grove.</p>
         <p style="font-weight:600">Don't see your city? Call <span style="font-variant-numeric:tabular-nums">{site.phone}</span> and ask.</p>

@@ -49,6 +49,7 @@ const jobs = defineCollection({
 const reviews = defineCollection({
   loader: file('src/content/reviews.json'),
   schema: z.object({
+    order: z.number(),
     author: z.string(),
     text: z.string(),
     rating: z.number().min(1).max(5),
@@ -61,12 +62,12 @@ const reviews = defineCollection({
 
 const offers = defineCollection({
   loader: file('src/content/offers.json'),
-  schema: z.object({ value: z.string(), suffix: z.string(), title: z.string(), text: z.string(), how: z.string() }),
+  schema: z.object({ order: z.number(), value: z.string(), suffix: z.string(), title: z.string(), text: z.string(), how: z.string() }),
 });
 
 const faqs = defineCollection({
   loader: file('src/content/faqs.json'),
-  schema: z.object({ q: z.string(), a: z.string() }),
+  schema: z.object({ order: z.number(), q: z.string(), a: z.string() }),
 });
 
 export const collections = { services, areas, jobs, reviews, offers, faqs };

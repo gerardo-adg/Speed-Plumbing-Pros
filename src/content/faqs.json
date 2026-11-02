@@ -2,26 +2,31 @@
   {
     "id": "cost",
     "q": "How much does it cost to have a plumber come out?",
-    "a": "The estimate is free. Your plumber looks at the problem, explains your options and gives you a price before any work starts. You decide whether to go ahead."
+    "a": "The estimate is free. Your plumber looks at the problem, explains your options and gives you a price before any work starts. You decide whether to go ahead.",
+    "order": 0
   },
   {
     "id": "same-day",
     "q": "Can you come today?",
-    "a": "Usually, yes. We keep room in the schedule for same-day calls across Greater Sacramento. For leaks and backups that can't wait, call our 24/7 emergency line."
+    "a": "Usually, yes. We keep room in the schedule for same-day calls across Greater Sacramento. For leaks and backups that can't wait, call our 24/7 emergency line.",
+    "order": 1
   },
   {
     "id": "licensed",
     "q": "Are you licensed and insured?",
-    "a": "Yes. Speed Plumbing Pros is a licensed, bonded and insured California plumbing contractor, and A+ rated with the Better Business Bureau."
+    "a": "Yes. Speed Plumbing Pros is a licensed, bonded and insured California plumbing contractor, and A+ rated with the Better Business Bureau.",
+    "order": 2
   },
   {
     "id": "commercial",
     "q": "Do you work on businesses and rental properties?",
-    "a": "Yes. We handle commercial plumbing, apartment buildings and rental homes, as well as single-family houses."
+    "a": "Yes. We handle commercial plumbing, apartment buildings and rental homes, as well as single-family houses.",
+    "order": 3
   },
   {
     "id": "burst-pipe",
     "q": "What should I do if a pipe bursts?",
-    "a": "Turn off the main water shutoff valve, usually near where the water line enters the house or at the street meter. Then call us. If water is near outlets or appliances, switch off power to that area."
+    "a": "Turn off the main water shutoff valve, usually near where the water line enters the house or at the street meter. Then call us. If water is near outlets or appliances, switch off power to that area.",
+    "order": 4
   }
 ]
