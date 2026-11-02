@@ -5,31 +5,35 @@ import Icon from './Icon.astro';
 import Stars from './Stars.astro';
 import { site, telHref } from '../data/site';
 
-// Hero photo: drop the file at src/assets/hero-van.(jpg|jpeg|png|webp) and it's picked up automatically.
+// Hero photo: src/assets/hero-van.(jpg|jpeg|png|webp) is picked up automatically.
 const found = import.meta.glob<{ default: ImageMetadata }>('../assets/hero-van.{jpg,jpeg,png,webp}', { eager: true });
 const photo = Object.values(found)[0]?.default;
 ---
-<section class="hero hero-split" aria-labelledby="hero-title">
-  <div class="hero-text">
+<section class="hero hero-bg" aria-labelledby="hero-title">
+  <div class="wrap hero-inner">
     <div class="hero-copy">
       <span class="pill"><Stars /> {site.rating.value.toFixed(1)} on Google · {site.rating.count}+ reviews</span>
       <h1 id="hero-title">Fast, friendly plumbers for <em>Sacramento homes</em></h1>
-      <p class="lede">Same-day help for leaks, clogs, water heaters and sewer lines. We explain your options and give you a clear price before any work starts, and the estimate is free.</p>
+      <p class="lede">Same-day help for leaks, clogs, water heaters and sewer lines. Clear price before any work starts, and the estimate is free.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" href={telHref}><Icon name="phone" />Call {site.phone}</a>
         <a class="btn btn-ghost" href="#book"><Icon name="cal" />Book online</a>
       </div>
-      <div class="emergency"><Icon name="bolt" /><span><b>Water where it shouldn't be?</b> Shut off your main valve and call us. Our emergency line is open 24/7.</span></div>
-      <div class="trust">
-        <span><Icon name="shield" />Licensed &amp; insured</span>
-        <span><Icon name="check" />BBB A+ rated</span>
-        <span><Icon name="tag" />$0 estimate fee</span>
-      </div>
     </div>
   </div>
-  <div class="hero-photo">
+  <div class="hero-media">
     {photo
-      ? <Image src={photo} alt="Speed Plumbing Pros service van crossing the Tower Bridge in Sacramento at sunrise" widths={[640, 960, 1280, 1600]} sizes="(min-width: 980px) 50vw, 100vw" loading="eager" fetchpriority="high" />
+      ? <Image src={photo} alt="Speed Plumbing Pros service van crossing the Tower Bridge in Sacramento at sunrise" widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" loading="eager" fetchpriority="high" />
       : <div class="hero-photo-missing"><Icon name="camera" /><span>Hero photo goes here<br /><code>src/assets/hero-van.jpg</code></span></div>}
   </div>
 </section>
+<div class="hero-strip">
+  <div class="wrap">
+    <div class="emergency"><Icon name="bolt" /><span><b>Water where it shouldn't be?</b> Shut off your main valve and call us. Our emergency line is open 24/7.</span></div>
+    <div class="trust">
+      <span><Icon name="shield" />Licensed &amp; insured</span>
+      <span><Icon name="check" />BBB A+ rated</span>
+      <span><Icon name="tag" />$0 estimate fee</span>
+    </div>
+  </div>
+</div>
