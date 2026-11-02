@@ -1,0 +1,20 @@
+---
+import RequestForm from './RequestForm.astro';
+import Icon from './Icon.astro';
+import { site, telHref } from '../data/site';
+---
+<section class="section book-band" aria-labelledby="book-title">
+  <div class="wrap book">
+    <div style="display:grid;gap:16px;align-content:start">
+      <h2 id="book-title">Book a plumber in under a minute</h2>
+      <p class="lede">Tell us what's going on and we'll call you back to confirm a time, often the same day. Prefer to talk? We pick up 24/7 for emergencies.</p>
+      <a class="phone-big" href={telHref}><Icon name="phone" />{site.phone}</a>
+      <ul class="checklist">
+        <li><Icon name="check" /><span>Free estimate before any work starts</span></li>
+        <li><Icon name="check" /><span>Licensed, bonded and insured</span></li>
+        <li><Icon name="check" /><span>Serving Sacramento and 24 nearby cities</span></li>
+      </ul>
+    </div>
+    <RequestForm onLight />
+  </div>
+</section>

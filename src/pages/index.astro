@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import BookSection from '../components/BookSection.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import Steps from '../components/Steps.astro';
 import WhyUs from '../components/WhyUs.astro';
@@ -23,6 +24,7 @@ const faqs = (await getCollection('faqs')).sort((a, b) => a.data.order - b.data.
   schema={[business(areas.map((a) => a.data.name)), faqPage(faqs.map((f) => f.data))]}
 >
   <Hero />
+  <BookSection />
 
   <section class="section" id="services" aria-labelledby="svc-title">
     <div class="wrap">
