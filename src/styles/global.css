@@ -60,12 +60,12 @@ p{margin:0}
 
 
 /* Utility bar */
-.util{background:var(--navy);border-bottom:1px solid #24343e;color:#c3ced3;font-size:.82rem;font-weight:500}
+.util{background:var(--cyan);color:var(--navy);font-size:.82rem;font-weight:600}
 .util .wrap{display:flex;gap:20px;justify-content:space-between;align-items:center;padding-block:8px;flex-wrap:wrap}
 .util .dots{display:flex;gap:18px;flex-wrap:wrap}
-.util b{color:var(--paper);font-weight:700}
+.util b{color:var(--navy);font-weight:800}
 .util .live{display:inline-flex;align-items:center;gap:8px}
-.util .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ade80}
+.util .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--navy)}
 
 /* Header */
 .header{position:sticky;top:0;z-index:50;background:var(--navy);color:var(--paper);border-bottom:1px solid #24343e}
