@@ -30,7 +30,8 @@ src/
   layouts/Base.astro      <head>, SEO meta, Open Graph, JSON-LD, header/footer
   lib/schema.ts           JSON-LD builders: Plumber, Service, BreadcrumbList, FAQPage
   styles/global.css       Brand tokens and all styles
-public/                   favicon, og.png, robots.txt
+public/                   favicons, app icons, og.png, robots.txt, site.webmanifest
+src/assets/logo.png       Official logo
 docs/concept-homepage.html  The original single-file concept shown to the client
 ```
 
@@ -41,7 +42,7 @@ From the client's brand manual (*Manual de identidad*, 2024):
 - Colors: navy `#19255a`, cyan `#2ea8d3`, gold `#c3983c`
 - Type: **Coolvetica** for headings, **Gotham** for body. Neither is a free web font, so the site currently uses Schibsted Grotesk and Montserrat from Google Fonts. To switch, buy web licenses, add the `.woff2` files with `@font-face`, and they'll take over automatically (they're first in the font stacks).
 - Voice: friendly, dependable, energetic. The "trusted neighbor who knows plumbing."
-- The logo in `components/Logo.astro` is rebuilt from the manual's construction. Replace it with the official SVG once we have it.
+- Logo: `src/assets/logo.png` (official badge, transparent PNG), rendered by `components/Logo.astro` and optimized at build time. Favicons and app icons in `public/` are generated from it. An SVG version would be sharper; swap it in when available.
 
 ## Job posts (the upload app)
 
@@ -71,7 +72,7 @@ The form posts JSON to `PUBLIC_FORM_ENDPOINT` (see `.env.example`). If it's empt
 ## Launch checklist
 
 - [ ] Fill every `TODO` in `src/data/site.ts`: CSLB license #, address, hours, email, review/social/BBB links
-- [ ] Confirm the business name (logo says "Speed Plumbing **Pro**", site and Google say "**Pros**") and which phone number to use: (916) 333-8369 or (707) 761-2626
+- [ ] Confirm which phone number to use: (916) 333-8369 (current site) or (707) 761-2626 (brand manual)
 - [ ] Replace the 3 sample job posts with real posts and photos
 - [ ] Write a unique `intro` for each city in `areas.json`, so the city pages aren't near-duplicates
 - [ ] Confirm offer terms and expiration dates in `offers.json`

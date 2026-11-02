@@ -16,6 +16,7 @@ export function business(areaNames: string[] = []): Json {
     telephone: site.phoneE164,
     ...(site.email ? { email: site.email } : {}),
     image: abs('/og.png'),
+    logo: abs('/icon-512.png'),
     address: {
       '@type': 'PostalAddress',
       ...(street ? { streetAddress: street } : {}),

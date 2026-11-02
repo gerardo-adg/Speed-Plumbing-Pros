@@ -10,7 +10,7 @@ const { street, city, region, postalCode } = site.address;
   <div class="wrap">
     <div class="cols">
       <div class="brand">
-        <a class="logo" href="/" aria-label={`${site.name} home`} style="width:190px"><Logo light /></a>
+        <a class="logo" href="/" aria-label={`${site.name} home`} style="width:170px"><Logo width={170} /></a>
         <address class="nap">
           <span style="color:var(--paper);font-weight:700">{site.name}</span>
           <span>{[street, city].filter(Boolean).join(', ')}, {region} {postalCode}</span>
