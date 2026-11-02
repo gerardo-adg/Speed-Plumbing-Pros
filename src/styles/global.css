@@ -1,7 +1,7 @@
 /* Layout concept: solid white page with solid navy bands (header, hero, reviews, final call, footer). Cyan for icons and accents, gold only for the main call / book actions. No tints, gradients or patterns. */
 :root{
   --navy:#111f28;        /* dark slate from the current site (nav, footer); brand navy #19255a stays in the logo */
-  --royal:#032253;       /* logo navy: accent only (headings on white, highlights, hovers) */
+  --royal:#2674a3;       /* blue from the brand manual's logo variations: accent only (headings on white, highlights, hovers) */
   --cyan:#2ea8d3;        /* Pantone P 116-15 C */
   --cyan-ink:#1b7fa6;    /* cyan dark enough for small text on light */
   --gold:#c3983c;        /* Pantone P 15-14 C */
