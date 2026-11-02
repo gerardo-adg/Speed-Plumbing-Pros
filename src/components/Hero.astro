@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+import Stars from './Stars.astro';
+import RequestForm from './RequestForm.astro';
+import { site, telHref } from '../data/site';
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill"><Stars /> {site.rating.value.toFixed(1)} on Google · {site.rating.count}+ reviews</span>
+      <h1 id="hero-title">Fast, friendly plumbers for <em>Sacramento homes</em></h1>
+      <p class="lede">Same-day help for leaks, clogs, water heaters and sewer lines. We explain your options and give you a clear price before any work starts, and the estimate is free.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href={telHref}><Icon name="phone" />Call {site.phone}</a>
+        <a class="btn btn-ghost" href="#book"><Icon name="cal" />Book online</a>
+      </div>
+      <div>
+        <div class="emergency"><Icon name="bolt" /><span><b>Water where it shouldn't be?</b> Shut off your main valve and call us. Our emergency line is open 24/7.</span></div>
+        <div class="trust" style="margin-top:16px">
+          <span><Icon name="shield" />Licensed &amp; insured</span>
+          <span><Icon name="check" />BBB A+ rated</span>
+          <span><Icon name="tag" />$0 estimate fee</span>
+        </div>
+      </div>
+    </div>
+    <RequestForm />
+  </div>
+</section>

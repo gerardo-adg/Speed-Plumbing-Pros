@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import { site, telHref } from '../data/site';
+interface Props { crumbs: { name: string; href: string }[]; lede?: string; actions?: boolean }
+const { crumbs, lede, actions = true } = Astro.props;
+---
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>{crumbs.map((c, i) => <li>{i < crumbs.length - 1 ? <a href={c.href}>{c.name}</a> : <span aria-current="page">{c.name}</span>}</li>)}</ol>
+    </nav>
+    <h1><slot /></h1>
+    {lede && <p class="lede">{lede}</p>}
+    {actions && (
+      <div class="hero-actions">
+        <a class="btn btn-gold" href={telHref}><Icon name="phone" />Call {site.phone}</a>
+        <a class="btn btn-ghost" href="#book"><Icon name="cal" />Book online</a>
+      </div>
+    )}
+  </div>
+</section>

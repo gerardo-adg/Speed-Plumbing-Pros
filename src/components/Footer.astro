@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Logo from './Logo.astro';
+import { site } from '../data/site';
+const services = (await getCollection('services')).filter((s) => s.data.featured);
+const areas = (await getCollection('areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
+const { street, city, region, postalCode } = site.address;
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <a class="logo" href="/" aria-label={`${site.name} home`} style="width:190px"><Logo light /></a>
+        <address class="nap">
+          <span style="color:var(--paper);font-weight:700">{site.name}</span>
+          <span>{[street, city].filter(Boolean).join(', ')}, {region} {postalCode}</span>
+          <b>{site.phone}</b>
+          <span>{site.hours ? `${site.hours} · ` : ''}{site.emergency247 ? 'Emergencies 24/7' : ''}</span>
+        </address>
+        <div class="badges"><span>CSLB #{site.license}</span><span>BBB A+</span><span>Licensed &amp; insured</span></div>
+      </div>
+      <div><h2 class="h4">Services</h2><ul>{services.map((s) => <li><a href={`/services/${s.id}`}>{s.data.name}</a></li>)}<li><a href="/services">All services</a></li></ul></div>
+      <div><h2 class="h4">Top areas</h2><ul>{areas.map((a) => <li><a href={`/service-areas/${a.id}`}>{a.data.name}</a></li>)}<li><a href="/service-areas">All 25 areas</a></li></ul></div>
+      <div><h2 class="h4">Company</h2><ul>
+        <li><a href="/about">About us</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/projects">Projects</a></li><li><a href="/#offers">Offers</a></li><li><a href="/contact">Contact</a></li>
+        {site.links.facebook && <li><a href={site.links.facebook} rel="noopener">Facebook</a></li>}
+        {site.links.instagram && <li><a href={site.links.instagram} rel="noopener">Instagram</a></li>}
+      </ul></div>
+    </div>
+    <div class="legal"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/sitemap-index.xml">Sitemap</a></span></div>
+  </div>
+</footer>

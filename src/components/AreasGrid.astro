@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+interface Props { current?: string }
+const { current } = Astro.props;
+const areas = (await getCollection('areas')).sort((a, b) => a.data.order - b.data.order);
+---
+<ul class="city-grid">
+  {areas.map((a) => <li><a href={`/service-areas/${a.id}`} aria-current={a.id === current ? 'page' : undefined}>{a.data.name}</a></li>)}
+</ul>

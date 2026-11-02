@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Privacy Policy', href: '/privacy' }];
+---
+<Base title="Privacy Policy" description="Privacy Policy for Speed Plumbing Pros." noindex>
+  <PageHero crumbs={crumbs} actions={false}>Privacy Policy</PageHero>
+  <section class="section"><div class="wrap prose" style="max-width:860px">
+    <p class="notice">TODO: migrate the current Privacy Policy text from speedplumbingpros.com/privacy before launch.</p>
+  </div></section>
+</Base>

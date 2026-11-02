@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import Stars from './Stars.astro';
+import { site } from '../data/site';
+interface Props { heading?: string; limit?: number }
+const { heading = 'What Sacramento homeowners say', limit = 4 } = Astro.props;
+const reviews = (await getCollection('reviews')).slice(0, limit);
+---
+<section class="section reviews-band" id="reviews" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px">
+        <span class="eyebrow">Reviews</span>
+        <h2 id="rev-title">{heading}</h2>
+      </div>
+      <div class="rating">
+        <span class="big">{site.rating.value.toFixed(1)}</span>
+        <div class="meta"><Stars label={`${site.rating.value} out of 5 stars`} /><span>{site.rating.count}+ five-star reviews on Google</span></div>
+        <div class="actions">
+          <a class="btn btn-gold" href={site.links.googleReviews || '/reviews'}>Read all reviews</a>
+          {site.links.leaveReview && <a class="btn btn-ghost" href={site.links.leaveReview} rel="noopener">Leave a review</a>}
+        </div>
+      </div>
+    </div>
+    <div class="review-grid">
+      {reviews.map((r) => (
+        <article class="review">
+          <blockquote>"{r.data.text}{r.data.truncated ? '…' : ''}"</blockquote>
+          <footer><div><b>{r.data.author}</b>{r.data.label && <><br /><small>{r.data.label}</small></>}</div><span class="g"><Icon name="g" />{r.data.source}</span></footer>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

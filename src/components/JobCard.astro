@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry, type CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { categories } from '../data/categories';
+interface Props { job: CollectionEntry<'jobs'> }
+const { job } = Astro.props;
+const area = await getEntry(job.data.area);
+const svc = await getEntry(job.data.services[0]);
+const icon = categories.find((c) => c.id === svc?.data.category)?.icon ?? 'pipe';
+const photo = job.data.photos[0];
+---
+<a class="job" href={`/projects/${job.id}`}>
+  <div class="photo">
+    {photo ? <Image src={photo.src} alt={photo.alt} widths={[400, 800]} sizes="(min-width: 720px) 33vw, 100vw" /> : <><Icon name={icon} /><span class="ph">Photo coming</span></>}
+    {svc && <span class="tag">{svc.data.name}</span>}
+  </div>
+  <span class="where"><Icon name="pin" />{area?.data.name ?? 'Sacramento area'}</span>
+  <h3>{job.data.title}</h3>
+  <p>{job.data.summary}</p>
+</a>

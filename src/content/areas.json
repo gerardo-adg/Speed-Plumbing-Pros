@@ -1,0 +1,177 @@
+[
+  {
+    "id": "sacramento",
+    "name": "Sacramento",
+    "county": "Sacramento County",
+    "order": 0,
+    "intro": ""
+  },
+  {
+    "id": "west-sacramento",
+    "name": "West Sacramento",
+    "county": "Yolo County",
+    "order": 1,
+    "intro": ""
+  },
+  {
+    "id": "natomas",
+    "name": "Natomas",
+    "county": "Sacramento County",
+    "order": 2,
+    "intro": ""
+  },
+  {
+    "id": "elk-grove",
+    "name": "Elk Grove",
+    "county": "Sacramento County",
+    "order": 3,
+    "intro": ""
+  },
+  {
+    "id": "rancho-cordova",
+    "name": "Rancho Cordova",
+    "county": "Sacramento County",
+    "order": 4,
+    "intro": ""
+  },
+  {
+    "id": "roseville",
+    "name": "Roseville",
+    "county": "Placer County",
+    "order": 5,
+    "intro": ""
+  },
+  {
+    "id": "rocklin",
+    "name": "Rocklin",
+    "county": "Placer County",
+    "order": 6,
+    "intro": ""
+  },
+  {
+    "id": "lincoln",
+    "name": "Lincoln",
+    "county": "Placer County",
+    "order": 7,
+    "intro": ""
+  },
+  {
+    "id": "granite-bay",
+    "name": "Granite Bay",
+    "county": "Placer County",
+    "order": 8,
+    "intro": ""
+  },
+  {
+    "id": "loomis",
+    "name": "Loomis",
+    "county": "Placer County",
+    "order": 9,
+    "intro": ""
+  },
+  {
+    "id": "folsom",
+    "name": "Folsom",
+    "county": "Sacramento County",
+    "order": 10,
+    "intro": ""
+  },
+  {
+    "id": "el-dorado-hills",
+    "name": "El Dorado Hills",
+    "county": "El Dorado County",
+    "order": 11,
+    "intro": ""
+  },
+  {
+    "id": "placerville",
+    "name": "Placerville",
+    "county": "El Dorado County",
+    "order": 12,
+    "intro": ""
+  },
+  {
+    "id": "orangevale",
+    "name": "Orangevale",
+    "county": "Sacramento County",
+    "order": 13,
+    "intro": ""
+  },
+  {
+    "id": "fair-oaks",
+    "name": "Fair Oaks",
+    "county": "Sacramento County",
+    "order": 14,
+    "intro": ""
+  },
+  {
+    "id": "citrus-heights",
+    "name": "Citrus Heights",
+    "county": "Sacramento County",
+    "order": 15,
+    "intro": ""
+  },
+  {
+    "id": "carmichael",
+    "name": "Carmichael",
+    "county": "Sacramento County",
+    "order": 16,
+    "intro": ""
+  },
+  {
+    "id": "antelope",
+    "name": "Antelope",
+    "county": "Sacramento County",
+    "order": 17,
+    "intro": ""
+  },
+  {
+    "id": "auburn",
+    "name": "Auburn",
+    "county": "Placer County",
+    "order": 18,
+    "intro": ""
+  },
+  {
+    "id": "newcastle",
+    "name": "Newcastle",
+    "county": "Placer County",
+    "order": 19,
+    "intro": ""
+  },
+  {
+    "id": "davis",
+    "name": "Davis",
+    "county": "Yolo County",
+    "order": 20,
+    "intro": ""
+  },
+  {
+    "id": "woodland",
+    "name": "Woodland",
+    "county": "Yolo County",
+    "order": 21,
+    "intro": ""
+  },
+  {
+    "id": "dixon",
+    "name": "Dixon",
+    "county": "Solano County",
+    "order": 22,
+    "intro": ""
+  },
+  {
+    "id": "vacaville",
+    "name": "Vacaville",
+    "county": "Solano County",
+    "order": 23,
+    "intro": ""
+  },
+  {
+    "id": "fairfield",
+    "name": "Fairfield",
+    "county": "Solano County",
+    "order": 24,
+    "intro": ""
+  }
+]

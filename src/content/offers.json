@@ -1,0 +1,26 @@
+[
+  {
+    "id": "free-estimate",
+    "value": "$0",
+    "suffix": "",
+    "title": "Estimate fee",
+    "text": "We'll look at the problem, explain your options and give you an honest price before any work begins. No pressure to book.",
+    "how": "Every job, every day"
+  },
+  {
+    "id": "100-off",
+    "value": "$100",
+    "suffix": "off",
+    "title": "Plumbing jobs over $1,000",
+    "text": "Save on bigger repairs, replacements and installs, like a new water heater, a repipe or sewer line work.",
+    "how": "Mention this offer when you book"
+  },
+  {
+    "id": "free-inspection",
+    "value": "Free",
+    "suffix": "",
+    "title": "Plumbing inspection \u00b7 $189 value",
+    "text": "A visual inspection of all accessible plumbing, with a list of anything that needs attention and our recommendations.",
+    "how": "Mention this offer when you book"
+  }
+]

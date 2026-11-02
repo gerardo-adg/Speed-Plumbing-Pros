@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import { site, telHref } from '../data/site';
+---
+<section class="final" aria-labelledby="final-title">
+  <div class="wrap">
+    <h2 id="final-title">Plumbing problem? <em>Let's fix it today.</em></h2>
+    <div class="call">
+      <small>Call or text, 24/7 for emergencies</small>
+      <a class="num" href={telHref}>{site.phone}</a>
+      <a class="btn btn-gold" href="/contact#book"><Icon name="cal" />Book online</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+const steps = [
+  { t: "Tell us what's going on", d: 'Call, text or book online. We find the soonest time that works for you, including today.' },
+  { t: 'Get a clear price first', d: 'Your plumber looks at the problem, explains your options in plain language and gives you a price before any work starts. The estimate is free.' },
+  { t: 'Fixed right, often same day', d: "We bring the parts and aim to finish on the first visit, so you're not waiting on a second appointment." },
+];
+---
+<section class="section steps-band" aria-labelledby="steps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2 id="steps-title">What happens when you call</h2>
+    </div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      {steps.map((s, i) => <li class="step"><span class="n" aria-hidden="true">{i + 1}</span><h3>{s.t}</h3><p>{s.d}</p></li>)}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import RequestForm from '../../components/RequestForm.astro';
+import Reviews from '../../components/Reviews.astro';
+import RecentJobs from '../../components/RecentJobs.astro';
+import Offers from '../../components/Offers.astro';
+import AreasGrid from '../../components/AreasGrid.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import Icon from '../../components/Icon.astro';
+import { business, breadcrumbs } from '../../lib/schema';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const areas = await getCollection('areas');
+  return areas.map((a) => ({ params: { slug: a.id }, props: { area: a } }));
+}
+interface Props { area: CollectionEntry<'areas'> }
+const { area } = Astro.props;
+const { name, county, intro } = area.data;
+const path = `/service-areas/${area.id}`;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas' }, { name: `${name}, CA`, href: path }];
+const lede = `Same-day plumbing repair in ${name} and across ${county}. Free estimates, clear prices and a 24/7 emergency line.`;
+---
+<Base
+  title={`Plumber in ${name}, CA`}
+  description={`Licensed plumbers serving ${name}, CA. Drain cleaning, water heaters, leak repair and 24/7 emergency service. $0 estimate fee. Call ${site.phone}.`}
+  schema={[business([name]), breadcrumbs(crumbs)]}
+>
+  <PageHero crumbs={crumbs} lede={lede}>Plumber in <em>{name}, CA</em></PageHero>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="prose">
+        {intro
+          ? <p style="font-size:1.15rem;color:var(--ink)">{intro}</p>
+          : <p style="font-size:1.15rem;color:var(--ink)">Speed Plumbing Pros is a local, family-owned plumbing company serving {name} and the rest of {county}. From clogged drains and water heaters to slab leaks and sewer lines, our licensed plumbers fix it fast and explain your options before any work starts.</p>}
+        <h2>Why {name} homeowners call us</h2>
+        <ul class="checklist">
+          <li><Icon name="check" /><span>Same-day appointments in {name} when you need them</span></li>
+          <li><Icon name="check" /><span>Free estimate and a clear price before any work begins</span></li>
+          <li><Icon name="check" /><span>Licensed, bonded and insured, CSLB #{site.license}</span></li>
+          <li><Icon name="check" /><span>{site.rating.count}+ five-star reviews on Google</span></li>
+        </ul>
+      </div>
+      <aside class="sticky-side"><RequestForm heading={`Book a plumber in ${name}`} onLight /></aside>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="area-svc">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">What we fix</span><h2 id="area-svc">Plumbing services in {name}</h2></div>
+      <ServicesGrid />
+    </div>
+  </section>
+
+  <RecentJobs area={area.id} heading={`Recent jobs in ${name}`} />
+  <Reviews heading={`What our customers say`} />
+  <Offers />
+  <section class="section">
+    <div class="wrap areas">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Nearby</span><h2>Other areas we serve</h2></div>
+      <AreasGrid current={area.id} />
+    </div>
+  </section>
+  <FinalCta />
+</Base>

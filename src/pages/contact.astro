@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import RequestForm from '../components/RequestForm.astro';
+import Icon from '../components/Icon.astro';
+import { business, breadcrumbs } from '../lib/schema';
+import { site, telHref } from '../data/site';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact' }];
+---
+<Base title="Contact & Book Service" description={`Call or text ${site.phone}, or book online. Same-day plumbing service across Greater Sacramento.`} schema={[business(), breadcrumbs(crumbs)]}>
+  <PageHero crumbs={crumbs} lede="Call, text or book online. For emergencies, call any time." actions={false}>Book a <em>plumber</em></PageHero>
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="prose">
+        <div class="panel">
+          <h2>Call or text</h2>
+          <a class="btn btn-gold" href={telHref} style="justify-self:start"><Icon name="phone" />{site.phone}</a>
+          <p>{site.emergency247 && 'Emergency line open 24/7.'} {site.hours && `Office hours: ${site.hours}.`}</p>
+        </div>
+        <div class="panel">
+          <h2>Service area</h2>
+          <p>Sacramento and 24 nearby cities. <a href="/service-areas">See all areas</a>.</p>
+          <p>License: CSLB #{site.license}</p>
+        </div>
+      </div>
+      <aside class="sticky-side"><RequestForm onLight /></aside>
+    </div>
+  </section>
+</Base>

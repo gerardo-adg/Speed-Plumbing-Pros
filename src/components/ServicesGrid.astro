@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import { categories } from '../data/categories';
+const services = await getCollection('services');
+---
+<div class="services-grid">
+  {categories.map((c) => (
+    <article class:list={['svc', { 'emergency-card': c.id === 'emergency-commercial' }]}>
+      <div class="ico"><Icon name={c.icon} /></div>
+      <h3>{c.name}</h3>
+      <p>{c.blurb}</p>
+      <ul>
+        {services.filter((s) => s.data.category === c.id).map((s) => <li><a href={`/services/${s.id}`}>{s.data.name}</a></li>)}
+      </ul>
+    </article>
+  ))}
+</div>

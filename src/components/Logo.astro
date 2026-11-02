@@ -1,0 +1,17 @@
+---
+/**
+ * Wordmark rebuilt from the brand manual (3.1): italic SPEED split by a water line,
+ * PLUMBING in cyan, PRO in gold. Replace with the client's official SVG when available.
+ * `light` turns the navy half white for dark backgrounds.
+ */
+interface Props { light?: boolean; title?: string }
+const { light = false, title = 'Speed Plumbing Pros' } = Astro.props;
+const id = 'lc' + Math.random().toString(36).slice(2, 8);
+const navy = light ? '#ffffff' : '#19255a';
+---
+<svg viewBox="0 0 300 104" role="img" aria-label={title}>
+  <defs><clipPath id={id}><path d="M0 0H300V24C262 22 236 34 186 39C130 44 70 37 0 58Z" /></clipPath></defs>
+  <text x="150" y="64" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-style="italic" font-size="72" letter-spacing="-3" fill="#2ea8d3" textLength="292" lengthAdjust="spacingAndGlyphs">SPEED</text>
+  <text x="150" y="64" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-style="italic" font-size="72" letter-spacing="-3" fill={navy} textLength="292" lengthAdjust="spacingAndGlyphs" clip-path={`url(#${id})`}>SPEED</text>
+  <text x="150" y="100" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="34" textLength="290" lengthAdjust="spacingAndGlyphs"><tspan fill="#2ea8d3">PLUMBING </tspan><tspan fill="#c3983c">PRO</tspan></text>
+</svg>

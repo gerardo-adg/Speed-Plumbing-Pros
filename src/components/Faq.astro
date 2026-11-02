@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { faqs: CollectionEntry<'faqs'>[]; heading?: string }
+const { faqs, heading = 'Common questions' } = Astro.props;
+---
+<section class="section faq-band" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Good to know</span><h2 id="faq-title">{heading}</h2></div>
+    <div class="faq">
+      {faqs.map((f, i) => <details open={i === 0}><summary>{f.data.q}</summary><p>{f.data.a}</p></details>)}
+    </div>
+  </div>
+</section>

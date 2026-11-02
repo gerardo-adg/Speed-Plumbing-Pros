@@ -1,0 +1,187 @@
+[
+  {
+    "id": "drain-cleaning",
+    "name": "Drain Cleaning",
+    "category": "drains-sewer",
+    "featured": true,
+    "short": "Fast, thorough removal of tough clogs in sinks, tubs, showers and main lines.",
+    "intro": "A slow or stopped drain usually means grease, hair, soap or roots are building up inside the pipe. We clear the clog completely, not just enough to get water moving, and tell you what caused it so it doesn't come back next week.",
+    "signs": ["Water drains slowly or backs up in the sink, tub or shower", "Gurgling sounds from drains or the toilet", "Bad smells coming up from a drain", "More than one fixture backing up at the same time"],
+    "includes": ["Find where the clog is and what's causing it", "Clear it with the right tool for the pipe: snake, auger or jetter", "Test every affected fixture before we leave", "Camera inspection if the clog keeps coming back"]
+  },
+  {
+    "id": "hydro-jetting",
+    "name": "Hydro Jetting",
+    "category": "drains-sewer",
+    "short": "High-pressure water that scours grease, scale and roots out of the whole pipe.",
+    "intro": "A snake punches a hole through a clog. Hydro jetting cleans the pipe wall from end to end with high-pressure water, which removes the grease, scale and root growth that cause repeat backups. It's the go-to for main lines, restaurants and older homes.",
+    "signs": ["The same drain clogs again a few weeks after snaking", "Grease buildup in kitchen or restaurant lines", "Tree roots found in the sewer line", "Slow drains throughout the house"],
+    "includes": ["Camera check to confirm the pipe can handle jetting", "Full-diameter cleaning of the line", "Before-and-after camera footage when needed", "Recommendations if the pipe itself is damaged"]
+  },
+  {
+    "id": "sewer-line-repair",
+    "name": "Sewer Line Repair",
+    "category": "drains-sewer",
+    "featured": true,
+    "short": "Cracked, root-damaged or collapsed sewer lines repaired or replaced.",
+    "intro": "Your main sewer line carries everything out of the house. When roots, shifting soil or old age crack it, you get backups, soggy spots in the yard and sewage smells. We find the damaged section with a camera and repair just what needs it whenever possible.",
+    "signs": ["Several drains backing up at once", "Sewage smell indoors or in the yard", "Wet, sunken or extra-green patches of lawn", "Water coming up from a floor drain or cleanout"],
+    "includes": ["Camera inspection to locate the problem", "Clear explanation of repair options and prices", "Spot repair or full line replacement", "Final camera check after the repair"]
+  },
+  {
+    "id": "sewer-camera-inspection",
+    "name": "Sewer Camera Inspection",
+    "category": "drains-sewer",
+    "short": "A waterproof camera shows exactly what's inside your drain or sewer line.",
+    "intro": "Instead of guessing, we run a camera through the line and show you what we see: roots, cracks, sags, grease or a lost toy. It's the fastest way to find the cause of repeat clogs, and smart to do before buying an older home.",
+    "signs": ["Recurring clogs with no clear cause", "Buying or selling a home with older plumbing", "Before hydro jetting or sewer repair", "Tree roots growing near the sewer line"],
+    "includes": ["Camera run through the drain or main line", "Locating the depth and position of problems", "Video and a plain-language summary for you", "Recommendations with prices, if anything needs fixing"]
+  },
+  {
+    "id": "water-heater-repair",
+    "name": "Water Heater Repair",
+    "category": "water-heaters",
+    "featured": true,
+    "short": "No hot water, not enough hot water, or a leaking tank, fixed fast.",
+    "intro": "Most water heater problems come down to a few parts: a thermocouple, gas valve, heating element, thermostat or a tank full of sediment. We diagnose it on the first visit, carry common parts on the truck and tell you honestly when a repair is worth it and when replacing makes more sense.",
+    "signs": ["No hot water or it runs out fast", "Rumbling or popping noises from the tank", "Rusty or smelly hot water", "Water pooling around the base of the heater"],
+    "includes": ["Full diagnosis of gas or electric units", "Repair with parts from the truck when possible", "Safety check of venting and relief valve", "Repair-or-replace advice with prices for both"]
+  },
+  {
+    "id": "tank-water-heater-installation",
+    "name": "Tank Water Heater Installation",
+    "category": "water-heaters",
+    "short": "New gas or electric tank water heaters, installed to code.",
+    "intro": "Tank water heaters usually last 8 to 12 years. When yours is leaking or worn out, we help you pick the right size for your household, haul the old one away and install the new one to current code, including seismic straps and proper venting.",
+    "signs": ["The tank is leaking from the bottom", "The heater is more than 10 years old", "Repairs keep adding up", "Your household needs more hot water"],
+    "includes": ["Help choosing size and fuel type", "Removal and disposal of the old heater", "Installation with seismic straps, venting and expansion tank as required", "Permit when required by your city"]
+  },
+  {
+    "id": "tankless-water-heater-installation",
+    "name": "Tankless Water Heater Installation",
+    "category": "water-heaters",
+    "short": "Endless hot water and a smaller footprint with a tankless system.",
+    "intro": "Tankless water heaters heat water on demand, so you don't run out and you're not paying to keep a tank hot all day. We size the unit for your home, upgrade gas and venting when needed, and handle service and descaling on existing tankless units too.",
+    "signs": ["You keep running out of hot water", "You want to free up space in the garage", "Your tank heater is due for replacement", "Your tankless unit shows error codes or loses heat"],
+    "includes": ["Sizing based on your fixtures and household", "Gas line and venting upgrades if needed", "Professional installation and startup", "Flushing and descaling for existing units"]
+  },
+  {
+    "id": "slab-leak-detection-repair",
+    "name": "Slab Leak Detection & Repair",
+    "category": "leaks-pipes",
+    "featured": true,
+    "short": "Leaks under your foundation found precisely and repaired with minimal digging.",
+    "intro": "A leak in a pipe under the concrete slab can waste water and damage floors for months before you see it. We use leak detection equipment to pinpoint the spot, then recommend the least disruptive fix: a spot repair, or rerouting the line around the slab.",
+    "signs": ["Water bill jumped with no change in use", "Warm or damp spots on the floor", "Sound of running water when everything is off", "Cracks in flooring or mold smells"],
+    "includes": ["Electronic leak detection to pinpoint the leak", "Explanation of repair vs. reroute options", "Repair with minimal damage to floors", "Pressure test to confirm the fix"]
+  },
+  {
+    "id": "pipe-repair-repiping",
+    "name": "Pipe Repair & Repiping",
+    "category": "leaks-pipes",
+    "short": "Leaking pipes repaired, and old galvanized or failing lines replaced.",
+    "intro": "From a single leaking joint to a whole-home repipe, we fix the problem and check what caused it, like high water pressure or corroded galvanized pipe. Repiping with PEX or copper restores water pressure and ends the cycle of leaks in older homes.",
+    "signs": ["Visible leaks, drips or water stains", "Low water pressure throughout the house", "Rusty or discolored water", "Older galvanized steel pipes"],
+    "includes": ["Repair of leaking or damaged sections", "Water pressure check and regulator service", "Whole-home repiping with PEX or copper", "Patch-ready openings and cleanup"]
+  },
+  {
+    "id": "gas-line-installation-repair",
+    "name": "Gas Line Installation & Repair",
+    "category": "leaks-pipes",
+    "short": "Safe gas line repairs and new lines for appliances, BBQs and fire pits.",
+    "intro": "Gas work needs to be done right the first time. We repair leaking gas lines and run new lines for ranges, dryers, water heaters, outdoor kitchens and fire pits, then pressure test everything before turning it on. If you smell gas, leave the house and call your gas company's emergency line first.",
+    "signs": ["Smell of gas near an appliance or line", "Adding a gas range, dryer or BBQ", "Converting from electric to gas", "Upgrading for a tankless water heater"],
+    "includes": ["Leak detection and repair", "New gas line runs, indoor and outdoor", "Pressure testing before turn-on", "Permit when required"]
+  },
+  {
+    "id": "clogged-toilet-repair",
+    "name": "Clogged Toilet Repair",
+    "category": "fixtures",
+    "short": "Fast, clean solutions for backups, overflows and stubborn toilet clogs.",
+    "intro": "When the plunger doesn't work, we clear the clog without damaging the toilet and check whether the problem is in the toilet or further down the line. If one toilet keeps clogging, we find out why.",
+    "signs": ["Toilet won't flush or keeps overflowing", "Water rises slowly and drains over minutes", "More than one toilet backing up", "Gurgling from the toilet when other fixtures drain"],
+    "includes": ["Clog removal with a closet auger", "Check of the drain line beyond the toilet", "Inspection of flapper, fill valve and wax seal", "Cleanup when we're done"]
+  },
+  {
+    "id": "toilet-installation",
+    "name": "Toilet Installation",
+    "category": "fixtures",
+    "short": "New toilets installed level, sealed and leak-free.",
+    "intro": "Whether you're replacing a cracked toilet or upgrading to a water-saving model, we remove the old one, check the flange, install the new toilet with a fresh seal and supply line, and haul the old one away.",
+    "signs": ["Cracked bowl or tank", "Toilet rocks or leaks at the base", "Constant running that repairs haven't fixed", "Remodel or upgrade to a high-efficiency toilet"],
+    "includes": ["Removal and disposal of the old toilet", "Flange inspection and repair", "New wax seal and supply line", "Leak test and level check"]
+  },
+  {
+    "id": "faucet-repair",
+    "name": "Faucet Repair",
+    "category": "fixtures",
+    "short": "Dripping, leaking or low-flow faucets fixed in the kitchen, bath or outdoors.",
+    "intro": "A dripping faucet can waste thousands of gallons a year. We replace worn cartridges, washers and O-rings, fix leaks under the sink, and tell you if the faucet is worth repairing or ready to be replaced.",
+    "signs": ["Dripping spout or leaking handle", "Water under the sink", "Low flow or uneven spray", "Handle that's stiff or hard to turn"],
+    "includes": ["Diagnosis of the leak or flow problem", "Cartridge, washer and seal replacement", "Supply line and shutoff valve check", "Repair-or-replace recommendation"]
+  },
+  {
+    "id": "faucet-installation",
+    "name": "Faucet Installation",
+    "category": "fixtures",
+    "short": "Kitchen, bathroom and laundry faucets installed cleanly.",
+    "intro": "Bought a new faucet or want help picking one? We install kitchen, bathroom, bar and laundry faucets, replace old shutoff valves and supply lines while we're there, and make sure there are no leaks before we leave.",
+    "signs": ["Upgrading your kitchen or bathroom", "Old faucet keeps leaking", "Switching to a pull-down or touchless faucet", "Corroded shutoff valves under the sink"],
+    "includes": ["Removal of the old faucet", "New supply lines and shutoffs as needed", "Installation and leak test", "Old fixture haul-away"]
+  },
+  {
+    "id": "garbage-disposal-installation-repair",
+    "name": "Garbage Disposal Installation & Repair",
+    "category": "fixtures",
+    "short": "Jammed, leaking or humming disposals repaired or replaced.",
+    "intro": "Disposals jam, leak and wear out. We clear jams, fix leaks at the flange and drain connections, and install new disposals sized for how you cook, including the electrical connection to an existing outlet.",
+    "signs": ["Disposal hums but doesn't spin", "Leaking under the sink", "Trips the reset button often", "Bad smells that cleaning doesn't fix"],
+    "includes": ["Jam clearing and reset", "Leak repair at flange and connections", "New disposal installation", "Drain line check"]
+  },
+  {
+    "id": "shower-tub-installation",
+    "name": "Shower & Tub Installation",
+    "category": "fixtures",
+    "short": "Shower valves, tubs and fixtures installed for remodels and repairs.",
+    "intro": "We handle the plumbing side of bathroom remodels and repairs: new shower valves, tub and shower fixtures, drains and supply lines. We also fix leaking valves, low pressure and temperature problems in existing showers.",
+    "signs": ["Leaking shower head or valve", "Water too hot or too cold", "Bathroom remodel in progress", "Slow-draining tub or shower"],
+    "includes": ["Shower and tub valve replacement", "Fixture and trim installation", "Drain and overflow work", "Pressure and temperature testing"]
+  },
+  {
+    "id": "water-softener-installation",
+    "name": "Water Softener Installation",
+    "category": "water-systems",
+    "short": "Softeners and whole-home filtration that stop hard-water scale.",
+    "intro": "Many homes around Sacramento, especially those on well or groundwater, have hard water. It leaves spots on dishes, scale on fixtures and buildup inside water heaters. A water softener or whole-home filtration system fixes it at the source and helps your appliances last longer.",
+    "signs": ["White scale on faucets and shower heads", "Spotty dishes and glassware", "Dry skin or dull hair after showering", "Water heater full of sediment"],
+    "includes": ["Help choosing a softener or filter system", "Installation with bypass valve", "Drain and electrical connections", "Setup and how-to for regeneration and salt"]
+  },
+  {
+    "id": "sump-pump-installation-repair",
+    "name": "Sump Pump Installation & Repair",
+    "category": "water-systems",
+    "short": "Sump pumps installed, repaired and tested before the rain comes.",
+    "intro": "A sump pump keeps water out of crawl spaces, basements and low spots. We install new pumps, replace failed ones, and test float switches and discharge lines so the pump works when the next storm hits.",
+    "signs": ["Pump runs constantly or not at all", "Standing water in the crawl space", "Loud grinding or rattling", "Pump is more than 7 to 10 years old"],
+    "includes": ["Pump installation or replacement", "Float switch and check valve testing", "Discharge line inspection", "Battery backup options"]
+  },
+  {
+    "id": "emergency-plumbing",
+    "name": "24/7 Emergency Plumbing",
+    "category": "emergency-commercial",
+    "featured": true,
+    "short": "Burst pipes, sewer backups and major leaks, handled day or night.",
+    "intro": "Some problems can't wait until morning. Call our 24/7 emergency line and we'll talk you through shutting off the water and get a plumber headed your way. While you wait, turn off the main water valve and keep people away from water near outlets.",
+    "signs": ["Burst or leaking pipe", "Sewage backing up into the house", "No water at all", "Water heater leaking heavily"],
+    "includes": ["24/7 phone line", "Help shutting off water over the phone", "Emergency repair to stop the damage", "Follow-up plan for permanent repairs"]
+  },
+  {
+    "id": "commercial-plumbing",
+    "name": "Commercial Plumbing",
+    "category": "emergency-commercial",
+    "short": "Plumbing for restaurants, salons, offices and apartment buildings.",
+    "intro": "When a drain backs up at your business, every hour costs money. We work with restaurants, salons, offices, property managers and multi-unit buildings on drain cleaning, water heaters, fixtures and repairs, and we schedule around your hours.",
+    "signs": ["Backed-up sinks or floor drains", "Grease buildup in kitchen lines", "Water heater can't keep up", "Ongoing maintenance for rental units"],
+    "includes": ["Drain cleaning and hydro jetting", "Commercial water heater service", "Fixture repair and replacement", "Scheduling around business hours"]
+  }
+]

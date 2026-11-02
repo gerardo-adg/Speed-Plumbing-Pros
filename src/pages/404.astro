@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+---
+<Base title="Page not found" description="This page doesn't exist." noindex>
+  <PageHero crumbs={[{ name: 'Home', href: '/' }, { name: 'Not found', href: '/404' }]} lede="That page has moved or doesn't exist. Here's where you can go instead.">Page not <em>found</em></PageHero>
+  <section class="section"><div class="wrap"><ServicesGrid /></div></section>
+</Base>

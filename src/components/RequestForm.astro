@@ -1,0 +1,58 @@
+---
+import { site } from '../data/site';
+interface Props { heading?: string; service?: string; onLight?: boolean }
+const { heading = 'Request service', service, onLight = false } = Astro.props;
+const options = ['Clogged drain', 'Leak or burst pipe', 'Water heater', 'Toilet repair', 'Sewer line', 'Something else'];
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+---
+<form class:list={['request', { 'on-light': onLight }]} id="book" data-endpoint={endpoint} novalidate>
+  <div style="display:grid;gap:6px">
+    <h2>{heading}</h2>
+    <p class="sub">Tell us what's going on. We'll call you back to confirm a time.</p>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required /></div>
+    <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required /></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-zip">ZIP code</label><input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" required /></div>
+    <div class="field"><label for="f-need">What do you need?</label>
+      <select id="f-need" name="need">
+        {service && <option selected>{service}</option>}
+        {options.filter((o) => o !== service).map((o) => <option>{o}</option>)}
+      </select>
+    </div>
+  </div>
+  <fieldset class="field">
+    <legend>When?</legend>
+    <div class="chips">
+      <label><input type="radio" name="when" value="Today" checked /><span>Today</span></label>
+      <label><input type="radio" name="when" value="This week" /><span>This week</span></label>
+      <label><input type="radio" name="when" value="Just a quote" /><span>Just a quote</span></label>
+    </div>
+  </fieldset>
+  <button class="btn btn-gold" type="submit">Request service</button>
+  <div class="sent" role="status" hidden></div>
+  <p class="alt">Rather talk? Call or text <b>{site.phone}</b></p>
+</form>
+<script>
+  document.querySelectorAll<HTMLFormElement>('form.request').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('.sent')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const missing = [...form.querySelectorAll<HTMLInputElement>('input[required]')].filter((i) => !i.value.trim());
+      if (missing.length) { missing[0].focus(); status.hidden = false; status.textContent = 'Please add your name, phone and ZIP code so we can call you back.'; return; }
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) { status.hidden = false; status.textContent = 'Demo mode: the form endpoint is not configured yet, so nothing was sent.'; return; }
+      try {
+        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(form))) });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        status.textContent = "Thanks! We got your request and will call you shortly.";
+      } catch {
+        status.textContent = "We couldn't send that. Please call or text us instead.";
+      }
+      status.hidden = false;
+    });
+  });
+</script>

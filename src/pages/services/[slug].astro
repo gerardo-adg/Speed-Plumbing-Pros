@@ -1,0 +1,67 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import RequestForm from '../../components/RequestForm.astro';
+import Reviews from '../../components/Reviews.astro';
+import RecentJobs from '../../components/RecentJobs.astro';
+import Offers from '../../components/Offers.astro';
+import AreasGrid from '../../components/AreasGrid.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { breadcrumbs, service as serviceSchema } from '../../lib/schema';
+import { site, telHref } from '../../data/site';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((s) => ({ params: { slug: s.id }, props: { svc: s, all: services } }));
+}
+interface Props { svc: CollectionEntry<'services'>; all: CollectionEntry<'services'>[] }
+const { svc, all } = Astro.props;
+const d = svc.data;
+const related = all.filter((s) => s.data.category === d.category && s.id !== svc.id);
+const path = `/services/${svc.id}`;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: d.name, href: path }];
+---
+<Base
+  title={`${d.name} in Sacramento, CA`}
+  description={`${d.short} Licensed Sacramento plumbers, free estimates, same-day service. Call ${site.phone}.`}
+  schema={[serviceSchema(d.name, d.short, path), breadcrumbs(crumbs)]}
+>
+  <PageHero crumbs={crumbs} lede={d.short}>{d.name} in <em>Sacramento</em></PageHero>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="prose">
+        <p style="font-size:1.15rem;color:var(--ink)">{d.intro}</p>
+        <h2>Signs you need {d.name.toLowerCase()}</h2>
+        <ul class="checklist">{d.signs.map((s) => <li><Icon name="check" /><span>{s}</span></li>)}</ul>
+        <h2>What's included</h2>
+        <ul class="checklist">{d.includes.map((s) => <li><Icon name="check" /><span>{s}</span></li>)}</ul>
+        <h2>Clear pricing, before we start</h2>
+        <p>Every job starts with a free estimate. Your plumber explains what they found and what it will cost, and nothing happens until you say yes. Ask about our current offers, including $100 off jobs over $1,000.</p>
+        <div class="hero-actions"><a class="btn btn-navy" href={telHref}><Icon name="phone" />Call {site.phone}</a></div>
+      </div>
+      <aside class="sticky-side">
+        <RequestForm heading={`Book ${d.name.toLowerCase()}`} service={d.name} onLight />
+        {related.length > 0 && (
+          <div class="panel">
+            <h2>Related services</h2>
+            <ul class="chip-list">{related.map((r) => <li><a href={`/services/${r.id}`}>{r.data.name}</a></li>)}</ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  <RecentJobs service={svc.id} heading={`Recent ${d.name.toLowerCase()} jobs`} />
+  <Reviews />
+  <Offers />
+  <section class="section">
+    <div class="wrap areas">
+      <div style="display:grid;gap:16px"><span class="eyebrow">Service area</span><h2>{d.name} near you</h2><p class="lede">We provide {d.name.toLowerCase()} in Sacramento and 24 nearby cities.</p></div>
+      <AreasGrid />
+    </div>
+  </section>
+  <FinalCta />
+</Base>

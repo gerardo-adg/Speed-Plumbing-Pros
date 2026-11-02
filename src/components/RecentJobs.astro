@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import JobCard from './JobCard.astro';
+interface Props { area?: string; service?: string; heading?: string; limit?: number }
+const { area, service, heading = 'Real work in your neighborhood', limit = 3 } = Astro.props;
+const jobs = (await getCollection('jobs'))
+  .filter((j) => (!area || j.data.area.id === area) && (!service || j.data.services.some((s) => s.id === service)))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, limit);
+---
+<section class="section jobs-band" id="jobs" aria-labelledby="jobs-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px"><span class="eyebrow">Recent jobs</span><h2 id="jobs-title">{heading}</h2></div>
+      <p class="lede">Photos and notes posted straight from the job site.</p>
+    </div>
+    {jobs.length ? (
+      <div class="job-grid">{jobs.map((job) => <JobCard job={job} />)}</div>
+    ) : (
+      <p class="empty">New jobs from this area will show up here as the team posts them. <a href="/projects">See all recent projects</a>.</p>
+    )}
+    <div class="upload-note"><Icon name="camera" /><span>Map pins and locations show the neighborhood or city, never a customer's address.</span></div>
+  </div>
+</section>

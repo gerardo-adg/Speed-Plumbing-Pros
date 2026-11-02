@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import JobCard from '../../components/JobCard.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { breadcrumbs } from '../../lib/schema';
+const jobs = (await getCollection('jobs')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Projects', href: '/projects' }];
+---
+<Base title="Recent Plumbing Projects in Sacramento" description="Real plumbing jobs from around Greater Sacramento: water heaters, repipes, softeners, drains and more, posted from the job site." schema={[breadcrumbs(crumbs)]}>
+  <PageHero crumbs={crumbs} lede="Photos and notes posted straight from the job site by our team." actions={false}>Recent <em>projects</em></PageHero>
+  <section class="section jobs-band">
+    <div class="wrap"><div class="job-grid">{jobs.map((job) => <JobCard job={job} />)}</div></div>
+  </section>
+  <FinalCta />
+</Base>

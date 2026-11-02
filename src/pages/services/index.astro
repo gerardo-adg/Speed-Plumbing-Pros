@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import Reviews from '../../components/Reviews.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { categories } from '../../data/categories';
+import { breadcrumbs } from '../../lib/schema';
+
+const services = await getCollection('services');
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }];
+---
+<Base title="Plumbing Services in Sacramento" description="Drain cleaning, water heaters, leak detection, sewer repair, repiping, fixtures and 24/7 emergency plumbing across Greater Sacramento." schema={[breadcrumbs(crumbs)]}>
+  <PageHero crumbs={crumbs} lede="One licensed team for every plumbing job in your home or business. Free estimates, clear prices and same-day service.">Plumbing services in <em>Sacramento</em></PageHero>
+  <section class="section">
+    <div class="wrap">
+      {categories.map((c) => (
+        <div class="cat-block" id={c.id}>
+          <div class="cat-head"><div class="ico"><Icon name={c.icon} /></div><div><h2 style="font-size:1.8rem">{c.name}</h2><p style="color:var(--ink-soft)">{c.blurb}</p></div></div>
+          <div class="svc-list">
+            {services.filter((s) => s.data.category === c.id).map((s) => (
+              <a class="svc-link" href={`/services/${s.id}`}><b>{s.data.name}</b><span>{s.data.short}</span></a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <Reviews />
+  <FinalCta />
+</Base>

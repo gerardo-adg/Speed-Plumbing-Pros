@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+const offers = await getCollection('offers');
+---
+<section class="section" id="offers" aria-labelledby="off-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px"><span class="eyebrow">Save on your next job</span><h2 id="off-title">Current offers</h2></div>
+      <p class="lede">Mention the offer when you call or book online.</p>
+    </div>
+    <div class="offer-grid">
+      {offers.map((o) => (
+        <article class="coupon">
+          <div class="top"><span class="val">{o.data.value}{o.data.suffix && <small>{o.data.suffix}</small>}</span><span class="what">{o.data.title}</span></div>
+          <div class="body"><p>{o.data.text}</p><span class="how"><Icon name="tag" />{o.data.how}</span></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

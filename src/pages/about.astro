@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Steps from '../components/Steps.astro';
+import Reviews from '../components/Reviews.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { breadcrumbs } from '../lib/schema';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
+---
+<Base title="About Us" description="Speed Plumbing Pros is a local, family-owned plumbing company serving Greater Sacramento. Fast, trustworthy and friendly." schema={[breadcrumbs(crumbs)]}>
+  <PageHero crumbs={crumbs} lede="A local, family-owned team built on one promise: show up fast, do the job right, and treat your home with care.">About <em>Speed Plumbing Pros</em></PageHero>
+  <section class="section">
+    <div class="wrap prose" style="max-width:860px">
+      <p class="notice">TODO: add the owner's story, years in business, team photos and license details from the client.</p>
+      <p style="font-size:1.15rem;color:var(--ink)">At Speed Plumbing Pros, we built our Sacramento company on one simple promise: show up fast, do the job right, and treat your home with care. We help local families and businesses with honest advice, quality repairs, drain cleaning, leak detection and reliable service. We believe clear communication and real workmanship still matter.</p>
+    </div>
+  </section>
+  <WhyUs />
+  <Steps />
+  <Reviews />
+  <FinalCta />
+</Base>

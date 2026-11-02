@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Terms of Service', href: '/terms' }];
+---
+<Base title="Terms of Service" description="Terms of Service for Speed Plumbing Pros." noindex>
+  <PageHero crumbs={crumbs} actions={false}>Terms of Service</PageHero>
+  <section class="section"><div class="wrap prose" style="max-width:860px">
+    <p class="notice">TODO: migrate the current Terms of Service text from speedplumbingpros.com/terms before launch.</p>
+  </div></section>
+</Base>

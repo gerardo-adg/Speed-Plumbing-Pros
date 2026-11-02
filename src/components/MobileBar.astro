@@ -1,0 +1,8 @@
+---
+import Icon from './Icon.astro';
+import { telHref } from '../data/site';
+---
+<div class="mbar" aria-label="Quick contact">
+  <a class="btn btn-gold" href={telHref}><Icon name="phone" />Call now</a>
+  <a class="btn btn-ghost" href="/contact#book"><Icon name="cal" />Book</a>
+</div>
