@@ -40,7 +40,7 @@ docs/concept-homepage.html  The original single-file concept shown to the client
 From the client's brand manual (*Manual de identidad*, 2024):
 
 - Colors: navy `#19255a`, cyan `#2ea8d3`, gold `#c3983c`
-- Type: **Coolvetica** for headings, **Gotham** for body. Neither is a free web font, so the site currently uses Schibsted Grotesk and Montserrat from Google Fonts. To switch, buy web licenses, add the `.woff2` files with `@font-face`, and they'll take over automatically (they're first in the font stacks).
+- Type: the manual specifies **Coolvetica** (headings) and **Gotham** (body). Neither is licensed for web use for free, so the site uses **Montserrat** throughout: Black (900) for headings, which matches the logo lettering, and Regular–Bold for body text. Montserrat is the standard free alternative to Gotham.
 - Voice: friendly, dependable, energetic. The "trusted neighbor who knows plumbing."
 - Logo: `src/assets/logo.png` (official badge, transparent PNG), rendered by `components/Logo.astro` and optimized at build time. Favicons and app icons in `public/` are generated from it. An SVG version would be sharper; swap it in when available.
 

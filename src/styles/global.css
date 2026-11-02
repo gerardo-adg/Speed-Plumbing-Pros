@@ -13,7 +13,7 @@
   --ink:#111f28;
   --ink-soft:#4b5a62;
   --line:#e1e5ee;
-  --font-display:"Coolvetica","Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-display:"Montserrat","Gotham","Helvetica Neue",Arial,sans-serif; /* Montserrat Black for headings: matches the logo lettering */
   --font-body:"Gotham","Montserrat","Helvetica Neue",Arial,sans-serif;
   --radius:10px;
   --gutter:max(16px, env(safe-area-inset-left, 0px));
@@ -35,8 +35,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
 .wrap{width:100%;max-width:1240px;margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
-h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.025em;margin:0;text-wrap:balance}
-h2{font-size:clamp(2rem,4.2vw,3.25rem);font-weight:800;color:var(--royal)}
+h1,h2,h3{font-family:var(--font-display);font-weight:900;line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,4.2vw,3.25rem);font-weight:900;color:var(--royal)}
 .reviews-band h2,.final h2,.footer .h4{color:var(--paper)}
 h3{font-size:1.3rem;font-weight:800;letter-spacing:-.015em}
 p{margin:0}
