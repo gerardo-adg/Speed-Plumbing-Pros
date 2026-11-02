@@ -71,7 +71,7 @@ The form posts JSON to `PUBLIC_FORM_ENDPOINT` (see `.env.example`). If it's empt
 
 ## Launch checklist
 
-- [ ] Fill every `TODO` in `src/data/site.ts`: CSLB license #, address, hours, email, review/social/BBB links
+- [ ] Fill every `TODO` in `src/data/site.ts`: CSLB license #, address, hours, email, Google/Yelp/BBB/social links (the credential badges link to them)
 - [ ] Confirm which phone number to use: (916) 333-8369 (current site) or (707) 761-2626 (brand manual)
 - [ ] Replace the 3 sample job posts with real posts and photos
 - [ ] Write a unique `intro` for each city in `areas.json`, so the city pages aren't near-duplicates

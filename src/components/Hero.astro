@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import Icon from './Icon.astro';
 import Stars from './Stars.astro';
+import Credentials from './Credentials.astro';
 import { site, telHref } from '../data/site';
 
 // Hero photo: src/assets/hero-van.(jpg|jpeg|png|webp) is picked up automatically.
@@ -27,13 +28,4 @@ const photo = Object.values(found)[0]?.default;
       : <div class="hero-photo-missing"><Icon name="camera" /><span>Hero photo goes here<br /><code>src/assets/hero-van.jpg</code></span></div>}
   </div>
 </section>
-<div class="hero-strip">
-  <div class="wrap">
-    <div class="emergency"><Icon name="bolt" /><span><b>Water where it shouldn't be?</b> Shut off your main valve and call us. Our emergency line is open 24/7.</span></div>
-    <div class="trust">
-      <span><Icon name="shield" />Licensed &amp; insured</span>
-      <span><Icon name="check" />BBB A+ rated</span>
-      <span><Icon name="tag" />$0 estimate fee</span>
-    </div>
-  </div>
-</div>
+<Credentials />

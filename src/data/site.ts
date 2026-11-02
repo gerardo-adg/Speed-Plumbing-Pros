@@ -7,7 +7,7 @@ export interface SiteInfo {
   name: string; url: string; tagline: string; phone: string; phoneE164: string; email: string; license: string;
   address: { street: string; city: string; region: string; postalCode: string };
   hours: string; emergency247: boolean; rating: { value: number; count: number };
-  links: { googleReviews: string; leaveReview: string; facebook: string; instagram: string; bbb: string };
+  links: { googleReviews: string; leaveReview: string; facebook: string; instagram: string; bbb: string; yelp: string };
 }
 
 export const site: SiteInfo = {
@@ -33,6 +33,7 @@ export const site: SiteInfo = {
     facebook: '', // TODO
     instagram: '', // TODO
     bbb: '', // TODO: BBB profile URL
+    yelp: '', // TODO: Yelp business page URL
   },
 };
 

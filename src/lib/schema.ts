@@ -26,7 +26,7 @@ export function business(areaNames: string[] = []): Json {
       addressCountry: 'US',
     },
     ...(areaNames.length ? { areaServed: areaNames.map((name) => ({ '@type': 'City', name: `${name}, CA` })) } : {}),
-    sameAs: [site.links.facebook, site.links.instagram, site.links.bbb, site.links.googleReviews].filter(Boolean),
+    sameAs: [site.links.facebook, site.links.instagram, site.links.bbb, site.links.yelp, site.links.googleReviews].filter(Boolean),
   };
 }
 
